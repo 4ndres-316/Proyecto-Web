@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>PokeTienda-Cartas</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="./proyecto2.css" />
+  </head>
+
+  <body>
+    <header class="container-fluid">
+      <div class="row bg-danger">
+        <div class="container px-4 text-center">
+          <div class="row align-items-center">
+            <div class="col-2 d-flex justify-content-center">
+              <img
+                id="ima"
+                src="./assets/logo.png"
+                alt="Logo Pokémon"
+                class="img-fluid"
+              />
+            </div>
+            <div class="col-8">
+              <div class="p-3 position-relative">
+                <h1 class="text-white">Tienda de Pokecartas</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <nav
+        id="princi"
+        class="bg-dark text-center py-2 d-flex justify-content-between align-items-center px-3"
+      >
+        <a href="./proyecto1.html" class="btn btn-outline-light">Regresar</a>
+
+        <button
+          class="btn"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasRight"
+          aria-controls="offcanvasRight"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="white"
+            class="bi bi-backpack2-fill"
+            viewBox="0 0 16 16"
+          >
+            <path d="M5 13h6v-3h-1v.5a.5.5 0 0 1-1 0V10H5z" />
+            <path
+              d="M6 2v.341C3.67 3.165 2 5.388 2 8v1.191l-1.17.585A1.5 1.5 0 0 0 0 11.118V13.5A1.5 1.5 0 0 0 1.5 15h1c.456.607 1.182 1 2 1h7c.818 0 1.544-.393 2-1h1a1.5 1.5 0 0 0 1.5-1.5v-2.382a1.5 1.5 0 0 0-.83-1.342L14 9.191V8a6 6 0 0 0-4-5.659V2a2 2 0 1 0-4 0m2-1a1 1 0 0 1 1 1v.083a6 6 0 0 0-2 0V2a1 1 0 0 1 1-1m0 3a4 4 0 0 1 3.96 3.43.5.5 0 1 1-.99.14 3 3 0 0 0-5.94 0 .5.5 0 1 1-.99-.14A4 4 0 0 1 8 4M4.5 9h7a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 .5-.5"
+            />
+          </svg>
+        </button>
+      </nav>
+
+      <div
+        class="offcanvas offcanvas-end"
+        tabindex="-1"
+        id="offcanvasRight"
+        aria-labelledby="offcanvasRightLabel"
+      >
+        <div class="offcanvas-header">
+          <h2>🛒 Carrito de Cartas Pokémon</h2>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="offcanvas-body">
+          <section class="container my-5">
+              <div class="row" id="cart-items"></div>
+              <hr />
+
+              <div class="d-flex justify-content-between align-items-center">
+                <h4>Total: <span id="total">0</span> Bs</h4>
+                <button class="btn btn-success" onclick="comprar()">
+                  Comprar
+                </button>
+              </div>
+
+              <div
+                id="mensajeCompra"
+                class="alert alert-success mt-3 d-none text-center"
+              >
+                Compra realizada con éxito
+              </div>
+            </section>
+        </div>
+      </div>
+
+      <section>
+        <!--Fila 1-->
+        <div class="row gx-5">
+          <div class="col p-1">
+            <div class="card h-100 text-center shadow-sm card-hover">
+              <img
+                src="./assets/Pokemones/centiskorch.png"
+                alt="Centiskorch"
+                id="cntskrch"
+              />
+              <div class="card-body">
+                <button class="btn btn-danger w-100" data-price="100" data-audio="./audios/centiskorch.mp3">Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col p-1">
+            <div class="card h-100 text-center shadow-sm card-hover">
+              <img src="./assets/Pokemones/arceus.png" alt="Arceus" id="rcs" />
+              <div class="card-body">
+                <button class="btn btn-danger w-100" data-price="50" data-audio="./audios/arceus.mp3">Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col p-1">
+            <div class="card h-100 text-center shadow-sm card-hover">
+              <img
+                src="./assets/Pokemones/cherubi.png"
+                alt="Cherubi"
+                id="chrb"
+              />
+              <div class="card-body">
+                <button class="btn btn-danger w-100" data-price="20" data-audio="./audios/cherubi.mp3">Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col p-1">
+            <div class="card h-100 text-center shadow-sm card-hover">
+              <img
+                src="./assets/Pokemones/cobalion.png"
+                alt="Cobalion"
+                id="cbln"
+              />
+              <div class="card-body">
+                <button class="btn btn-danger w-100" data-price="100" data-audio="./audios/cobalion.mp3">Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col p-1">
+            <div class="card h-100 text-center shadow-sm card-hover">
+              <img
+                src="./assets/Pokemones/rayquaza.png"
+                alt="M-Rayquaza"
+                id="mrqz"
+              />
+              <div class="card-body">
+                <button class="btn btn-danger w-100" data-price="1000" data-audio="./audios/rayquaza-mega.mp3">Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Fila 2-->
+        <div class="row gx-5">
+          <div class="col p-1">
+            <div class="card h-100 text-center shadow-sm card-hover">
+              <img
+                src="./assets/Pokemones/charizard.png"
+                alt="Charizard"
+                id="chrzrd"
+              />
+              <div class="card-body">
+                <button class="btn btn-danger w-100" data-price="100" data-audio="./audios/charizard.mp3">Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col p-1">
+            <div class="card h-100 text-center shadow-sm card-hover">
+              <img
+                src="./assets/Pokemones/blastoise.png"
+                alt="Blastoise"
+                id="blsts"
+              />
+              <div class="card-body">
+                <button class="btn btn-danger w-100" data-price="100" data-audio="./audios/blastoise.mp3">Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col p-1">
+            <div class="card h-100 text-center shadow-sm card-hover">
+              <img
+                src="./assets/Pokemones/venasaur.png"
+                alt="Venusaur"
+                id="vnsr"
+              />
+              <div class="card-body">
+                <button class="btn btn-danger w-100" data-price="100" data-audio="./audios/venasaur.mp3">Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col p-1">
+            <div class="card h-100 text-center shadow-sm card-hover">
+              <img
+                src="./assets/Pokemones/vaporeon.png"
+                alt="Vaporeon"
+                id="vprn"
+              />
+              <div class="card-body">
+                <button class="btn btn-danger w-100" data-price="50" data-audio="./audios/vaporeon.mp3">Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col p-1">
+            <div class="card h-100 text-center shadow-sm card-hover">
+              <img 
+                src="./assets/Pokemones/keldeo.png" 
+                alt="Keldeo" 
+                id="kld" 
+              />
+              <div class="card-body">
+                <button class="btn btn-danger w-100" data-price="75" data-audio="./audios/keldeo.mp3">Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Fila 3-->
+        <div class="row gx-5">
+          <div class="col p-1">
+            <div class="card h-100 text-center shadow-sm card-hover">
+              <img
+                src="./assets/Pokemones/solgaleo.png"
+                alt="Solgaleo"
+                id="slgl"
+              />
+              <div class="card-body">
+                <button class="btn btn-danger w-100" data-price="100" data-audio="./audios/solgaleo.mp3">Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col p-1">
+            <div class="card h-100 text-center shadow-sm card-hover">
+              <img
+                src="./assets/Pokemones/kangaskhan.png"
+                alt="Kangashkan"
+                id="kngshkn"
+              />
+              <div class="card-body">
+                <button class="btn btn-danger w-100" data-price="50" data-audio="./audios/kangaskhan.mp3">Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col p-1">
+            <div class="card h-100 text-center shadow-sm card-hover">
+              <img
+                src="./assets/Pokemones/aegislash.png"
+                alt="Aegislash"
+                id="gslsh"
+              />
+              <div class="card-body">
+                <button class="btn btn-danger w-100" data-price="75" data-audio="./audios/aegislash.mp3">Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col p-1">
+            <div class="card h-100 text-center shadow-sm card-hover">
+              <img src="./assets/Pokemones/celebi.png" alt="Celebi" id="clb" />
+              <div class="card-body">
+                <button class="btn btn-danger w-100" data-price="150" data-audio="./audios/celebi.mp3">Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col p-1">
+            <div class="card h-100 text-center shadow-sm card-hover">
+              <img src="./assets/Pokemones/absol.png" alt="Absol" id="bsl" />
+              <div class="card-body">
+                <button class="btn btn-danger w-100" data-price="75" data-audio="./audios/absol.mp3">Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Fila 4-->
+        <div class="row gx-5">
+          <div class="col p-1">
+            <div class="card h-100 text-center shadow-sm card-hover">
+              <img src="./assets/Pokemones/ho-oh.png" alt="Ho-Oh" id="h-h" />
+              <div class="card-body">
+                <button class="btn btn-danger w-100" data-price="100" data-audio="./audios/ho-oh.mp3">Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col p-1">
+            <div class="card h-100 text-center shadow-sm card-hover">
+              <img
+                src="./assets/Pokemones/butterfree.png"
+                alt="Butterfree"
+                id="bttrfr"
+              />
+              <div class="card-body">
+                <button class="btn btn-danger w-100" data-price="200" data-audio="./audios/butterfree.mp3">Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col p-1">
+            <div class="card h-100 text-center shadow-sm card-hover">
+              <img src="./assets/Pokemones/mew.png" alt="Mew" id="mw" />
+              <div class="card-body">
+                <button class="btn btn-danger w-100" data-price="1000" data-audio="./audios/mew.mp3">Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col p-1">
+            <div class="card h-100 text-center shadow-sm card-hover">
+              <img
+                src="./assets/Pokemones/mewtwo1.png"
+                alt="Mewtwo1"
+                id="mwtw1"
+              />
+              <div class="card-body">
+                <button class="btn btn-danger w-100" data-price="20000" data-audio="./audios/mewtwo.mp3">Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col p-1">
+            <div class="card h-100 text-center shadow-sm card-hover">
+              <img
+                src="./assets/Pokemones/mewtwo2.png"
+                alt="Mewtwo2"
+                id="mwtw2"
+              />
+              <div class="card-body">
+                <button class="btn btn-danger w-100" data-price="20000" data-audio="./audios/mewtwo.mp3">Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Fila 5-->
+        <div class="row gx-5">
+          <div class="col p-1">
+            <div class="card h-100 text-center shadow-sm card-hover">
+              <img
+                src="./assets/Pokemones/meganium.png"
+                alt="Meganium"
+                id="mgnm"
+              />
+              <div class="card-body">
+                <button class="btn btn-danger w-100" data-price="50" data-audio="./audios/meganium.mp3">Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col p-1">
+            <div class="card h-100 text-center shadow-sm card-hover">
+              <img src="./assets/Pokemones/lunala.png" alt="Lunala" id="lnl" />
+              <div class="card-body">
+                <button class="btn btn-danger w-100" data-price="100" data-audio="./audios/lunala.mp3">Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col p-1">
+            <div class="card h-100 text-center shadow-sm card-hover">
+              <img
+                src="./assets/Pokemones/meowscarada.png"
+                alt="Meowscarada"
+                id="mwscrd"
+              />
+              <div class="card-body">
+                <button class="btn btn-danger w-100" data-price="1000" data-audio="./audios/meowscarada.mp3">Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col p-1">
+            <div class="card h-100 text-center shadow-sm card-hover">
+              <img
+                src="./assets/Pokemones/mewtwo3.png"
+                alt="Mewtwo3"
+                id="mwtw3"
+              />
+              <div class="card-body">
+                <button class="btn btn-danger w-100" data-price="20000" data-audio="./audios/mewtwo.mp3">Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col p-1">
+            <div class="card h-100 text-center shadow-sm card-hover">
+              <img
+                src="./assets/Pokemones/mewtwo4.png"
+                alt="Mewtwo4"
+                id="mwtw4"
+              />
+              <div class="card-body">
+                <button class="btn btn-danger w-100" data-price="20000" data-audio="./audios/mewtwo.mp3">Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Fila 5-->
+        <div class="row gx-5">
+          <div class="col p-1">
+            <div class="card h-100 text-center shadow-sm card-hover">
+              <img
+                src="./assets/Pokemones/malamar.png"
+                alt="Malamar"
+                id="mlmr"
+              />
+              <div class="card-body">
+                <button class="btn btn-danger w-100" data-price="100" data-audio="./audios/malamarmp3">Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col p-1">
+            <div class="card h-100 text-center shadow-sm card-hover">
+              <img
+                src="./assets/Pokemones/krokorok.png"
+                alt="Krokorok"
+                id="krkrk"
+              />
+              <div class="card-body">
+                <button class="btn btn-danger w-100" data-price="50" data-audio="./audios/krokorok.mp3">Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col p-1">
+            <div class="card h-100 text-center shadow-sm card-hover">
+              <img src="./assets/Pokemones/kyogre.png" alt="Kyogre" id="kgr" />
+              <div class="card-body">
+                <button class="btn btn-danger w-100" data-price="1000" data-audio="./kyogre.mp3">Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col p-1">
+            <div class="card h-100 text-center shadow-sm card-hover">
+              <img
+                src="./assets/Pokemones/pikachu.png"
+                alt="Pikachu"
+                id="pkch"
+              />
+              <div class="card-body">
+                <button class="btn btn-danger w-100" data-price="500" data-audio="./audios/pikachu.ogg">Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col p-1">
+            <div class="card h-100 text-center shadow-sm card-hover">
+              <img
+                src="./assets/Pokemones/capsakid.png"
+                alt="Capsakid"
+                id="cpskd"
+              />
+              <div class="card-body">
+                <button class="btn btn-danger w-100" data-price="50" data-audio="./audios/capsakid.mp3">Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="proyecto2.js"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

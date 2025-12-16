@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>PokeTienda-Dashboard</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+
+    <link href="proyecto3.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header class="container-fluid">
+      <div class="row bg-danger">
+        <div class="container px-4">
+          <div class="row align-items-center py-2">
+            <div class="col-2 d-flex justify-content-center">
+              <img
+                id="ima"
+                src="./assets/logo.png"
+                alt="Logo Pokémon"
+                class="img-fluid"
+              />
+            </div>
+
+            <div class="col-8 text-center">
+              <h1 class="text-white m-0">Tienda de Pokecartas</h1>
+            </div>
+
+            <div class="col-2 text-end">
+              <a href="./proyecto1.html" class="btn btn-outline-light">
+                Regresar
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div
+        id="login"
+        class="container vh-100 d-flex justify-content-center align-items-center"
+      >
+        <div class="card p-4 shadow" style="width: 350px">
+          <h3 class="text-center mb-3">Iniciar sesión</h3>
+
+          <input
+            id="user"
+            type="text"
+            class="form-control mb-2"
+            placeholder="Usuario"
+          />
+          <input
+            id="pass"
+            type="password"
+            class="form-control mb-3"
+            placeholder="Contraseña"
+          />
+
+          <button class="btn btn-danger w-100" onclick="login()">Entrar</button>
+
+          <p id="error" class="text-danger text-center mt-2 d-none">
+            Usuario o contraseña incorrectos
+          </p>
+        </div>
+      </div>
+
+      <div id="dashboard" class="d-none">
+        <!-- NAV -->
+        <nav class="bg-dark text-center py-2">
+          <button class="btn btn-outline-light" onclick="logout()">
+            Cerrar sesión
+          </button>
+        </nav>
+
+        <!-- CONTENIDO -->
+        <main class="container my-4">
+          <div class="row text-center">
+            <div class="col-md-4 mb-3">
+              <div class="card shadow">
+                <div class="card-body">
+                  <h5>Total Ventas</h5>
+                  <h2 id="totalVentas">0 Bs</h2>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <div class="card shadow">
+                <div class="card-body">
+                  <h5>Productos Vendidos</h5>
+                  <h2 id="cantidadProductos">0</h2>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <div class="card shadow">
+                <div class="card-body">
+                  <h5>Estado</h5>
+                  <h2 class="text-success">Activo</h2>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-4">
+              <div class="col-12">
+                <div class="card shadow">
+                  <div class="card-body text-center">
+                    <h4 class="mb-3">Las más vendidas</h4>
+
+                    <div
+                      class="slider-track d-flex justify-content-center gap-4"
+                    >
+                      <img
+                        src="./assets/Pokemones/pikachu.png"
+                        alt="Carta Pikachu"
+                      />
+                      <img
+                        src="./assets/Pokemones/meowscarada.png"
+                        alt="Carta Meowscarada"
+                      />
+                      <img
+                        src="./assets/Pokemones/arceus.png"
+                        alt="Carta Arceus"
+                      />
+                      <img src="./assets/Pokemones/mew.png" alt="Carta Mew" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </main>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="proyecto3.js"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

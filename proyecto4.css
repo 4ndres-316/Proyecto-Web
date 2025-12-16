@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#ima {
+  max-height: 60px;
+  height: auto;
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.5);
+}
+
+#princi {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
